@@ -109,21 +109,11 @@ def get_sum_zero_pairs(numbers):
     """
 
     result = []
-    # no_num_duplicates_set = set(numbers)
-    # for num in no_num_duplicates_set:
-    #     if -num in no_num_duplicates_set:
-    #         if [-num, num] not in result:
-    #             result.append([num, -num])
-
-    count_each_nums = {}
-    for num in set(numbers):
-        if num == 0:
-            result.append([0, 0])
-
-        if num in count_each_nums:
-            result.append([count_each_nums[num], num])
-        else:
-            count_each_nums[-num] = num
+    no_num_duplicates_set = set(numbers)
+    for num in no_num_duplicates_set:
+        if -num in no_num_duplicates_set:
+            if [-num, num] not in result:
+                result.append([num, -num])
 
     return result
 
